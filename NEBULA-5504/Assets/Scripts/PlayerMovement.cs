@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
     private Vector2 rawMovement;
-    private Vector2 mousePos;
 
 
     public static bool ActionAvailable = true;
@@ -24,9 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         health = 100;
 
-        if (positionHandler.preTpPosition == null) { Debug.Log("bye bye"); return; }
-
-        transform.position = positionHandler.preTpPosition;
     }
 
     void Update()
@@ -52,10 +48,6 @@ public class PlayerMovement : MonoBehaviour
         //    else
         //        playerAnim.SetBool("isWalking", false);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            positionHandler.SceneChange(transform);
-        }
 
     }
 

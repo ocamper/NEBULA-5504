@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pickable
   - Player FirePoint
+  - ObjLv1
+  - ObjLv2
+  - SceneManager
   layers:
   - Default
   - TransparentFX
