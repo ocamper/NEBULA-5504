@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 rawMovement;
     private Vector2 mousePos;
 
+
     public static bool ActionAvailable = true;
 
 
@@ -30,9 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-      //  Debug.Log("Player Transform: " + transform.position);
-      //  Debug.Log("PosHandler Transform: " + positionHandler.preTpPosition);
 
         if (Time.timeScale == 0) return;
 

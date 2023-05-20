@@ -8,6 +8,8 @@ public class positionHandler : MonoBehaviour
     public static Vector2 preTpPosition;
     public static int currentScene;
 
+
+
     private void Start()
     {
         preTpPosition = new Vector2(-7.15f, 0);
