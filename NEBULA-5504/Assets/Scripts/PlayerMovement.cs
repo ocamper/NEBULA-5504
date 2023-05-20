@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
+        Debug.Log(health);
+
         if (Time.timeScale == 0) return;
 
         movement.x = Input.GetAxis("Horizontal");

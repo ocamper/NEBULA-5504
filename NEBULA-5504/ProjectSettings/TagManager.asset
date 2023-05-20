@@ -9,6 +9,7 @@ TagManager:
   - ObjLv1
   - ObjLv2
   - SceneManager
+  - HostileKnife
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall / 1
+  - Wall / 2
+  - Wall / Full
   - 
   - 
   - 
