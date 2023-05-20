@@ -25,8 +25,12 @@ public class GunRotation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 lookDir = mousePos - player.transform.position;
-        float targetAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(targetAngle, Vector3.forward);
+
+        if (player.GetComponent<PlayerMovement>().MovementAvailable)
+        {
+            Vector3 lookDir = mousePos - player.transform.position;
+            float targetAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(targetAngle, Vector3.forward);
+        }
     }
 }

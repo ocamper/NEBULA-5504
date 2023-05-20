@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(hpIncreaseOn);
 
         if (Time.timeScale == 0) return;
 
@@ -43,6 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (health <= 0)
         {
+            ActionAvailable = false;
+            MovementAvailable = false;
+
           //  currentScene = SceneManager.GetActiveScene().buildIndex;
           //  SceneManager.LoadScene("11DeathScene");
         }

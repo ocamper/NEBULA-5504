@@ -9,7 +9,7 @@ TagManager:
   - ObjLv1
   - ObjLv2
   - SceneManager
-  - HostileKnife
+  - Bullet
   layers:
   - Default
   - TransparentFX
