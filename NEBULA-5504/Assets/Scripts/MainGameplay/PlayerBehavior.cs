@@ -11,7 +11,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Awake()
     {
-        boxPrefab = Resources.Load<GameObject>("Prefabs/BoxPrefab");
+        boxPrefab = Resources.Load<GameObject>("Prefabs/BoxParent");
         sceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<TestSceneManager>();
     }
 
