@@ -298,6 +298,7 @@ MonoBehaviour:
   rb: {fileID: 7179857952801771932}
   MovementAvailable: 1
   health: 100
+  hpBar: {fileID: 0}
 --- !u!114 &7158906702721298458
 MonoBehaviour:
   m_ObjectHideFlags: 0

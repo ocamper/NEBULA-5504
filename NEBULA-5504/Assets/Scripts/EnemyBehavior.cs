@@ -20,7 +20,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject == player.gameObject)
         {
-            player.health -= 20;
+            player.LoseHealth(20);
         }
     }
 }

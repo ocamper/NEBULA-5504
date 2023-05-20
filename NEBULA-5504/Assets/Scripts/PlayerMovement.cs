@@ -9,11 +9,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     public bool MovementAvailable = true;
-    public int health;
 
     private Vector2 movement;
     private Vector2 rawMovement;
 
+    private static bool hpIncreaseOn;
+    public int health;
+    public HealthBarScript hpBar;
 
     public static bool ActionAvailable = true;
 
@@ -22,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         health = 100;
-
+        hpBar.SetHealth(health);
     }
 
     void Update()
     {
 
-        Debug.Log(health);
+        Debug.Log(hpIncreaseOn);
 
         if (Time.timeScale == 0) return;
 
@@ -50,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
         //    else
         //        playerAnim.SetBool("isWalking", false);
 
+        if (health < 100)
+        {
+            if (!hpIncreaseOn)
+                StartCoroutine(hpIncrease());
+        }
 
     }
 
@@ -61,6 +68,28 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); //Constantly moves the Player to its current position PLUS the directional input values from the Vector2 variable, multiplied by the set speed and by the fixedDeltaTime to avoid framerate discrepancies between machines
         }
 
+    }
+
+    public void LoseHealth(int hpDecrease)
+    {
+        health -= hpDecrease;
+        hpBar.SetHealth(health);
+    }
+
+    IEnumerator hpIncrease()
+    {
+        hpIncreaseOn = true;
+
+        for(int i = health; i < 100; i++)
+        {
+            health++;
+            hpBar.SetHealth(health);
+
+            if (i >= 99)
+                hpIncreaseOn = false;
+
+            yield return new WaitForSeconds(1.5f);
+        }
     }
 
 }
