@@ -19,11 +19,8 @@ public class BoxBehavior : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && Vector3.Distance(transform.position, player.position) < grabDistance)
         {
-
-            
             if (InventoryManager.objectHeld == 0)
             {
-                Debug.Log("sdhguiaiup");
                 InventoryManager.objectChange(1);
                 Destroy(transform.parent.gameObject);
             }

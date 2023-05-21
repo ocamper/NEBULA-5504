@@ -7,7 +7,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] private Animator doorAnim;
     [SerializeField] private bool doorOpen;
 
-    [SerializeField] private ButtonScript button;
+    [SerializeField] private ButtonStateStorage button;
     [SerializeField] private BulletTriggerButton altTrigger;
 
     private void Update()
@@ -30,6 +30,8 @@ public class DoorScript : MonoBehaviour
 
         if (altTrigger != null && button != null)
         {
+            Debug.Log(button.buttonActive);
+
             if (altTrigger.triggerActive && button.buttonActive)
                 doorOpen = true;
             else
