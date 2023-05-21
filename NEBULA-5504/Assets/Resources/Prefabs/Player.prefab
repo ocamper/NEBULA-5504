@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 191056395}
-  bulletForce: 20
+  bulletForce: 200
   reloadBar: {fileID: 8597115979680384131}
 --- !u!50 &1026529417
 Rigidbody2D:

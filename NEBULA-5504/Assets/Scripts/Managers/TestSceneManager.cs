@@ -9,6 +9,8 @@ public class TestSceneManager : MonoBehaviour
 
     public int dimension = 1;
 
+    [SerializeField] private GameObject fxTrans;
+
     private void Awake()
     {
         objLv1 = GameObject.FindGameObjectsWithTag("ObjLv1");
@@ -67,11 +69,30 @@ public class TestSceneManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (dimension == 1)
-                dimension = 2;
+
+            if (PlayerMovement.teleportAvailable)
+            {
+                if (dimension == 1)
+                    StartCoroutine(TeleportSequence(2));
+                else
+                    StartCoroutine(TeleportSequence(1));
+            }
             else
-                dimension = 1;
+            {
+                Debug.Log("ERROR: COULD NOT TELEPORT - WALL BLOCKING THE OTHER SIDE");
+            }
         }
             
+    }
+
+    IEnumerator TeleportSequence(int switchDimension)
+    {
+        Time.timeScale = 0;
+        fxTrans.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.33f);
+        dimension = switchDimension;
+        yield return new WaitForSecondsRealtime(0.9f);
+        fxTrans.SetActive(false);
+        Time.timeScale = 1;
     }
 }

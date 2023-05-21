@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool ActionAvailable = true;
 
-
+    public static bool teleportAvailable = true;
 
     private void Awake()
     {
@@ -100,4 +100,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    // Teleport availability below ugh i hate organizing code
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "TeleportTriggers")
+        {
+            teleportAvailable = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "TeleportTriggers")
+        {
+            teleportAvailable = true;
+        }
+    }
 }

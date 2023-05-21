@@ -11,6 +11,8 @@ TagManager:
   - SceneManager
   - Bullet
   - Box
+  - Laser
+  - TeleportTriggers
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Wall / 1
   - Wall / 2
   - Wall / Full
-  - 
-  - 
+  - bulletIgnore
+  - bullet
   - 
   - 
   - 
