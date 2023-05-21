@@ -7,7 +7,8 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.tag != "Laser")
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

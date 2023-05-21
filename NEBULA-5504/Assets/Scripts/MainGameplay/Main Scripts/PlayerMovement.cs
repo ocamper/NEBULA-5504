@@ -72,6 +72,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+            LoseHealth(30);
+    }
+
     public void LoseHealth(int hpDecrease)
     {
         health -= hpDecrease;
