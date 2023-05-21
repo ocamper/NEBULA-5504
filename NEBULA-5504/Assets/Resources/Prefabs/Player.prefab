@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191056394}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.021, y: 0, z: 0}
+  m_LocalPosition: {x: 1.119, y: 0.102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026529415}
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1026529417}
+  gunSprite: {fileID: 1914393087}
 --- !u!114 &5997546370580840290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914393083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7532, y: 0, z: 0}
-  m_LocalScale: {x: 0.5353305, y: 0.20941876, z: 1}
+  m_LocalPosition: {x: 0.83, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1026529415}
   m_RootOrder: 0
@@ -185,8 +186,8 @@ SpriteRenderer:
   m_SortingLayerID: 207175141
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.066498995, g: 0, b: 0.3773585, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 00b2b354cb750d14a9dce6f2f8371871, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -269,7 +270,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -6723422562880409913, guid: c75634dafc8194f4cb5d0f1fa8301787, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -541,7 +542,7 @@ GameObject:
   - component: {fileID: 3476349957887765877}
   - component: {fileID: 7158906702721298458}
   - component: {fileID: 7179857952801771932}
-  - component: {fileID: 7179857952801771934}
+  - component: {fileID: 839651835}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -638,8 +639,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &7179857952801771934
-CircleCollider2D:
+--- !u!70 &839651835
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -651,9 +652,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.008860893, y: 0.0059074825}
+  m_Size: {x: 1.2147943, y: 1.484406}
+  m_Direction: 0
 --- !u!1 &8426443529671981952
 GameObject:
   m_ObjectHideFlags: 0

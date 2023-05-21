@@ -8,8 +8,10 @@ public class ButtonScript : MonoBehaviour
 
     public bool playerIn;
     public bool boxIn;
-   // [SerializeField] private Animator anim;
-   // [SerializeField] private AudioSource pressSfx;
+    // [SerializeField] private AudioSource pressSfx;
+
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite[] sprites;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -41,6 +43,11 @@ public class ButtonScript : MonoBehaviour
     private void CallActive(int type)
     {
         activeState = type;
+
+        if (type > 0)
+            spriteRenderer.sprite = sprites[0];
+        else
+            spriteRenderer.sprite = sprites[1];
     }
 
     private void Update()
