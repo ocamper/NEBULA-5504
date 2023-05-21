@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool teleportAvailable = true;
 
+    [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer playerSprite;
+
     private void Awake()
     {
         health = 100;
@@ -39,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         rawMovement.x = Input.GetAxisRaw("Horizontal");
         rawMovement.y = Input.GetAxisRaw("Vertical");
 
-
         if (health <= 0)
         {
             ActionAvailable = false;
@@ -49,10 +51,20 @@ public class PlayerMovement : MonoBehaviour
           //  SceneManager.LoadScene("11DeathScene");
         }
 
-        //     if (rawMovement.x != 0 || rawMovement.y != 0)
-        //         playerAnim.SetBool("isWalking", true);
-        //    else
-        //        playerAnim.SetBool("isWalking", false);
+        if (rawMovement.x != 0 || rawMovement.y != 0)
+            anim.SetBool("isWalking", true);
+        else
+            anim.SetBool("isWalking", false);
+
+        
+        if (rawMovement.x > 0)
+        {
+            playerSprite.flipX = true;
+        } else if (rawMovement.x < 0)
+        {
+            playerSprite.flipX = false;
+        }
+
 
         if (health < 100)
         {
