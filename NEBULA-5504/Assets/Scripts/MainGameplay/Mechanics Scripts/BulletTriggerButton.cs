@@ -11,6 +11,7 @@ public class BulletTriggerButton : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             triggerActive = true;
+            GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 1f);
         }
     }
 }

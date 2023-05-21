@@ -13,6 +13,17 @@ public class TestSceneManager : MonoBehaviour
     {
         objLv1 = GameObject.FindGameObjectsWithTag("ObjLv1");
         objLv2 = GameObject.FindGameObjectsWithTag("ObjLv2");
+
+        foreach (GameObject gameObject in objLv1)
+        {
+            if (gameObject != null)
+                gameObject.SetActive(true);
+        }
+        foreach (GameObject gameObject in objLv2)
+        {
+            if (gameObject != null)
+                gameObject.SetActive(false);
+        }
     }
 
     public void ObjectAdded(int objType)

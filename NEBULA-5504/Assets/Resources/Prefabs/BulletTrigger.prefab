@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6228935503974347159}
   m_Layer: 0
   m_Name: BulletTrigger
-  m_TagString: Untagged
+  m_TagString: ObjLv1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89422c179d11ff489809609880f75b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonActive: 0
+  triggerActive: 0
 --- !u!61 &6228935503974347159
 BoxCollider2D:
   m_ObjectHideFlags: 0
