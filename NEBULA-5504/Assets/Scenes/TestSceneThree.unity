@@ -1180,6 +1180,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &268590399 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8870635168399327893, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+  m_PrefabInstance: {fileID: 1602844924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &286202115
 GameObject:
   m_ObjectHideFlags: 3
@@ -3920,10 +3925,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1359193039}
     m_Modifications:
+    - target: {fileID: 8870635168399327893, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870635168399327893, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870635168399327893, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870635168399327893, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8870635168399327894, guid: b5508b58a557177409d99ad77475cdec, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 409585616}
+    - target: {fileID: 8870635168399327894, guid: b5508b58a557177409d99ad77475cdec, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 268590399}
     - target: {fileID: 8870635168514842938, guid: b5508b58a557177409d99ad77475cdec, type: 3}
       propertyPath: target
       value: 
@@ -3931,10 +3956,6 @@ PrefabInstance:
     - target: {fileID: 8870635168514842939, guid: b5508b58a557177409d99ad77475cdec, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870635168514842939, guid: b5508b58a557177409d99ad77475cdec, type: 3}
-      propertyPath: m_TagString
-      value: ObjLv2
       objectReference: {fileID: 0}
     - target: {fileID: 8870635168514842943, guid: b5508b58a557177409d99ad77475cdec, type: 3}
       propertyPath: m_RootOrder

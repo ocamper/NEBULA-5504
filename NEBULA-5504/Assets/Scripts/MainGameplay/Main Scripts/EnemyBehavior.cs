@@ -7,15 +7,31 @@ public class EnemyBehavior : MonoBehaviour
 {
     public AIPath aiPath;
     [SerializeField] PlayerMovement player;
+    [SerializeField] private Animator enemyAnim;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
 
     public int enemyHp = 100;
 
     private void Update()
     {
-        if (aiPath.desiredVelocity.x >= 0.01f)
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        else if (aiPath.desiredVelocity.x >= 0.01f)
-            transform.localScale = new Vector3(1f, 1f, 1f);
+        Debug.Log(aiPath.desiredVelocity.x);
+
+        if (aiPath.desiredVelocity.x < 0f)
+        {
+            spriteRenderer.flipX = false;
+            enemyAnim.SetBool("isMoving", true);
+        }
+        else if (aiPath.desiredVelocity.x > 0f)
+        {
+            spriteRenderer.flipX = true;
+            enemyAnim.SetBool("isMoving", true);
+        }
+        
+        if (aiPath.desiredVelocity.x == 0)
+        {
+            enemyAnim.SetBool("isMoving", false);
+        }
 
         if (enemyHp <= 0)
         {
