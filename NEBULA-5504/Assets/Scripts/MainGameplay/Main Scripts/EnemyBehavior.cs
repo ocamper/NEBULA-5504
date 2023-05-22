@@ -10,12 +10,21 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private Animator enemyAnim;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    private GameObject deathFx;
+
+    private float redValue = 255f;
 
     public int enemyHp = 100;
 
+    private void Awake()
+    {
+        deathFx = Resources.Load<GameObject>("Prefabs/bloodEffect");
+    }
+
     private void Update()
     {
-        Debug.Log(aiPath.desiredVelocity.x);
+        spriteRenderer.color = new Color(255f, redValue, redValue);
+
 
         if (aiPath.desiredVelocity.x < 0f)
         {
@@ -36,6 +45,7 @@ public class EnemyBehavior : MonoBehaviour
         if (enemyHp <= 0)
         {
             Destroy(gameObject);
+            Instantiate(deathFx, transform.position, transform.rotation);
         }
     }
 
@@ -46,6 +56,20 @@ public class EnemyBehavior : MonoBehaviour
             player.LoseHealth(20);
         }
         if (collision.gameObject == GameObject.FindGameObjectWithTag("Bullet"))
+        {
             enemyHp -= 34;
+            StartCoroutine(ColorChange());
+        }
+    }
+
+    IEnumerator ColorChange()
+    {
+        redValue = 0f;
+
+        for (int i = 0; i < 10; i++)
+        {
+            redValue = i;
+            yield return new WaitForSecondsRealtime(0.1f);
+        }   
     }
 }

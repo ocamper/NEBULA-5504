@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: that red thing is a bad guy who will try to fucking kill you
+  m_text: that red thing is a bad guy who will try to kill you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5025,6 +5025,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7302919782810142404, guid: ed1bde2a07d9bc5408435b6a3278a5aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302919782810142405, guid: ed1bde2a07d9bc5408435b6a3278a5aa, type: 3}
+      propertyPath: maxFrameTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302919782810142405, guid: ed1bde2a07d9bc5408435b6a3278a5aa, type: 3}
+      propertyPath: logPathResults
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7302919782810142405, guid: ed1bde2a07d9bc5408435b6a3278a5aa, type: 3}
