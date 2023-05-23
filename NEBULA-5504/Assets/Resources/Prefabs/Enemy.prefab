@@ -115,6 +115,7 @@ MonoBehaviour:
   aiPath: {fileID: 8870635168514842941}
   player: {fileID: 0}
   enemyAnim: {fileID: 7986653107630107635}
+  spriteRenderer: {fileID: 8870635168399327893}
   enemyHp: 100
 --- !u!1 &8870635168514842939
 GameObject:
@@ -131,7 +132,7 @@ GameObject:
   - component: {fileID: 7986653107630107635}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: ObjLv2
+  m_TagString: ObjLv1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
