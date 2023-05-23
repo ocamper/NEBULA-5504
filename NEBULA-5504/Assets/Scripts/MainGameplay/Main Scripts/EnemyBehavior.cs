@@ -49,12 +49,16 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject == player.gameObject)
         {
             player.LoseHealth(20);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject == GameObject.FindGameObjectWithTag("Bullet"))
         {
             enemyHp -= 34;

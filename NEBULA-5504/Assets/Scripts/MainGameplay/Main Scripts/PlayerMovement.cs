@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer playerSprite;
 
+    [SerializeField] private GameObject hurtFx;
+
+    private bool takeDamage = true;
+
     private void Awake()
     {
         health = 100;
@@ -51,16 +55,19 @@ public class PlayerMovement : MonoBehaviour
           //  SceneManager.LoadScene("11DeathScene");
         }
 
-        if (rawMovement.x != 0 || rawMovement.y != 0)
-            anim.SetBool("isWalking", true);
-        else
-            anim.SetBool("isWalking", false);
+        if (MovementAvailable)
+        {
+            if (rawMovement.x != 0 || rawMovement.y != 0)
+                anim.SetBool("isWalking", true);
+            else
+                anim.SetBool("isWalking", false);
+        }
 
         
-        if (rawMovement.x > 0)
+        if (rawMovement.x > 0 && MovementAvailable)
         {
             playerSprite.flipX = true;
-        } else if (rawMovement.x < 0)
+        } else if (rawMovement.x < 0 && MovementAvailable)
         {
             playerSprite.flipX = false;
         }
@@ -84,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Laser")
             LoseHealth(30);
@@ -92,7 +99,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void LoseHealth(int hpDecrease)
     {
-        health -= hpDecrease;
+        if (takeDamage)
+        {
+            StartCoroutine(hpLoss());
+            health -= hpDecrease;
+        }
+       
         hpBar.SetHealth(health);
     }
 
@@ -112,7 +124,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    IEnumerator hpLoss()
+    {
+        hurtFx.SetActive(true);
+        takeDamage = false;
+        yield return new WaitForSeconds(1);
+        takeDamage = true;
+    }
+    
     // Teleport availability below ugh i hate organizing code
 
     private void OnTriggerStay2D(Collider2D collision)

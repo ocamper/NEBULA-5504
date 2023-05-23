@@ -10,9 +10,12 @@ public class TestSceneManager : MonoBehaviour
     public int dimension = 1;
 
     [SerializeField] private GameObject fxTrans;
+    [SerializeField] private GameObject errorMsg;
 
     private void Awake()
     {
+        errorMsg.SetActive(false);
+
         objLv1 = GameObject.FindGameObjectsWithTag("ObjLv1");
         objLv2 = GameObject.FindGameObjectsWithTag("ObjLv2");
 
@@ -79,7 +82,8 @@ public class TestSceneManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("ERROR: COULD NOT TELEPORT - WALL BLOCKING THE OTHER SIDE");
+                errorMsg.SetActive(false);
+                errorMsg.SetActive(true);
             }
         }
             
