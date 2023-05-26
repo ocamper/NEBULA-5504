@@ -23,13 +23,13 @@ public class PlayerBehavior : MonoBehaviour
 
             if (sceneManager.dimension == 1)
             {
-                Debug.Log("shuigsaiuga");
+                
                 box.tag = "ObjLv1";
                 sceneManager.ObjectAdded(1);
             }
             if (sceneManager.dimension == 2)
             {
-                Debug.Log("shuigsaiuga");
+                
                 box.tag = "ObjLv2";
                 sceneManager.ObjectAdded(2);
             }

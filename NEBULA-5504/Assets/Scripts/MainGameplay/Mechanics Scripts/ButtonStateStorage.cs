@@ -11,6 +11,7 @@ public class ButtonStateStorage : MonoBehaviour
 
     private void Update()
     {
+
         if (scriptToStore.gameObject.activeSelf)
         {
             localState = scriptToStore.activeState;
@@ -28,6 +29,10 @@ public class ButtonStateStorage : MonoBehaviour
                 {
                     buttonActive = false;
                 }
+            }
+            else
+            {
+                buttonActive = true;
             }
         }
         else

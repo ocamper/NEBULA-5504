@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2975241921828474375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1662, y: 1.1662, z: 1.1662}
+  m_LocalScale: {x: 1.22451, y: 1.22451, z: 1.22451}
   m_Children:
   - {fileID: 2975241922883240208}
   - {fileID: 2975241922007900250}
@@ -67,8 +67,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorAnim: {fileID: 2975241921828474373}
   doorOpen: 0
-  button: {fileID: 0}
-  altTrigger: {fileID: 0}
+  directButtonTriggers: []
+  inverseButtonTriggers: []
+  directBtTriggers: []
 --- !u!1 &2975241922007900245
 GameObject:
   m_ObjectHideFlags: 0
