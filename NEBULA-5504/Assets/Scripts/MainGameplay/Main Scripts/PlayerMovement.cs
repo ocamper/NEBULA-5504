@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool ActionAvailable = true;
 
-    public static bool teleportAvailable = true;
+    public static bool teleportAvailable;
 
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer playerSprite;
@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         health = 100;
         hpBar.SetHealth(health);
+        teleportAvailable = true;
+        MovementAvailable = true;
+        ActionAvailable = true;
     }
 
     void Update()
@@ -50,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
         {
             ActionAvailable = false;
             MovementAvailable = false;
+
+            GameObject.Find("Death Manager").GetComponent<DeathManager>().playedDied();
 
           //  currentScene = SceneManager.GetActiveScene().buildIndex;
           //  SceneManager.LoadScene("11DeathScene");
@@ -138,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "TeleportTriggers")
         {
+            Debug.Log("cant teleport because of s" + collision.gameObject);
             teleportAvailable = false;
         }
     }
