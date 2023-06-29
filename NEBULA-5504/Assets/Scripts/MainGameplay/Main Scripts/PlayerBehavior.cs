@@ -23,7 +23,6 @@ public class PlayerBehavior : MonoBehaviour
 
             if (sceneManager.dimension == 1)
             {
-                
                 box.tag = "ObjLv1";
                 sceneManager.ObjectAdded(1);
             }

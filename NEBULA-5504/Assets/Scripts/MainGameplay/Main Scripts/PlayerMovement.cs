@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             ActionAvailable = false;
             MovementAvailable = false;
 
-            GameObject.Find("Death Manager").GetComponent<DeathManager>().playedDied();
+            Debug.Log("Death");
 
           //  currentScene = SceneManager.GetActiveScene().buildIndex;
           //  SceneManager.LoadScene("11DeathScene");

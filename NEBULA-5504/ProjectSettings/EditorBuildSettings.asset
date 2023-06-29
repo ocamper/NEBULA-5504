@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/00INTRO.unity
-    guid: d6ec99eba11429542bbc187907e5bc14
-  - enabled: 1
-    path: Assets/Scenes/01TitleScreen.unity
-    guid: b8bbcf6fd26d531478b58d8e5ba1b341
-  - enabled: 1
     path: Assets/Scenes/10LevelOne.unity
     guid: 4159a2406bf134240ac2fb35736a05c7
   - enabled: 1
@@ -20,19 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/12LevelThree.unity
     guid: dc87eaf43ff4656418b288516e3c3432
-  - enabled: 1
-    path: Assets/Scenes/FINALSCREEN.unity
-    guid: bcce988f707eccb4cb795781a10ad4ec
-  - enabled: 1
-    path: Assets/Scenes/YouDiedScene.unity
-    guid: 588adc1a4dd7a5342a18abbc803ca171
-  - enabled: 1
-    path: Assets/Scenes/TitleScreenScenes/STORYBUTTON.unity
-    guid: 46dcf5ac2fc47664dbd1bf2826632dbf
-  - enabled: 1
-    path: Assets/Scenes/TitleScreenScenes/NOTEBUTTON.unity
-    guid: bec09010f0adc684991af057835ab962
-  - enabled: 1
-    path: Assets/Scenes/TitleScreenScenes/CREDITSBUTTON.unity
-    guid: e43530433c3390c418ce8c3afc913cc5
   m_configObjects: {}
