@@ -12,9 +12,12 @@ public class TestSceneManager : MonoBehaviour
     [SerializeField] private GameObject fxTrans;
     [SerializeField] private GameObject errorMsg;
 
+    private bool canSwitch;
+
     private void Awake()
     {
         errorMsg.SetActive(false);
+        canSwitch = true;
 
         objLv1 = GameObject.FindGameObjectsWithTag("ObjLv1");
         objLv2 = GameObject.FindGameObjectsWithTag("ObjLv2");
@@ -70,7 +73,7 @@ public class TestSceneManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canSwitch)
         {
 
             if (PlayerMovement.teleportAvailable)
@@ -91,6 +94,7 @@ public class TestSceneManager : MonoBehaviour
 
     IEnumerator TeleportSequence(int switchDimension)
     {
+        canSwitch = false;
         Time.timeScale = 0;
         fxTrans.SetActive(true);
         yield return new WaitForSecondsRealtime(0.33f);
@@ -98,5 +102,6 @@ public class TestSceneManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.9f);
         fxTrans.SetActive(false);
         Time.timeScale = 1;
+        canSwitch = true;
     }
 }
